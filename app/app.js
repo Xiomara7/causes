@@ -11,15 +11,22 @@ admin.initializeApp({
 });
 
 app.get('/', function(request, response) {
-	response.send(serviceAccount)
+	response.send("Hello World")
 }); 
 
-app.get('/orgs', function(request, response) {
-	var userRef = admin.database().ref('/organization');
-  	userRef.once('value').then(function(snapshot) {
-    	response.send(snapshot.val().name);
-    }); 
-}); 
+// Register
+// Login
+// CreateCampaign
+// Donate
+// UpdateProfile
+// Stripe
+
+// app.get('/orgs', function(request, response) {
+// 	var userRef = admin.database().ref('/organization');
+//   	userRef.once('value').then(function(snapshot) {
+//     	response.send(snapshot.val().name);
+//     }); 
+// }); 
 
 
 app.listen(3000); 

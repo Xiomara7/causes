@@ -3,5 +3,4 @@ Hackea por una causa
 
 ## Run 
 
-`npm start`
-open `localhost:3000`
+`npm start` & open `localhost:3000`

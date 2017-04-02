@@ -64,14 +64,16 @@
 }
 
 #campaignBody {
-  margin:20px;
+  background: #00ADD7;
+  height: 500px;
 }
 
 #organizationBody {
-  background: #00ADD7;
+  background: #fff;
   height: 500px;
 
 }
+
 /*.campaignBodyDesc {
   padding-left: 20px !important;
   padding-right: 20px !important;
@@ -100,5 +102,5 @@
 }
 
 .splashImg {
-  width: 60%;
+  width: 650px;
 }

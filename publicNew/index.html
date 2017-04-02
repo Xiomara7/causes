@@ -228,7 +228,17 @@
 
     <!-- <section class="col-md-12" id="donationForm">
       <h1>Donación</h1>
-
+      <form action="/your-server-side-code" method="POST">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7"
+          data-amount="999"
+          data-name="Demo Site"
+          data-description="Widget"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto">
+        </script>
+      </form>
       <form action="form">
         <div class="col-md-12">
           <label>Cantidad</label>
@@ -250,6 +260,9 @@
           <label>Email</label>
           <input type="text" name="email" ng-model="donation.email">
         </div>
+        <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_live_PDbjJ0cTRUadacF6wCGXSWEs">
+        </script> -->
         <input type="submit" value="Submit">
       </form>
     </section> -->
@@ -264,6 +277,7 @@
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
     <script src="js/app.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

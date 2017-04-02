@@ -28,6 +28,25 @@ app.post('/api/donate', function(req, res) {
 	}
 }); 
 
+app.post('api/charge', function(req, res) {
+  var amount = req.body.donation.quantity;
+	var token = request.body.stripeToken;
+
+    stripe.charges.create({
+        source: token,
+        currency: 'usd',
+        amount: amount
+    },
+
+    function(err, charge) {
+        if (err) {
+            res.send(500, err);
+        } else {
+            res.send(204);
+        }
+    });
+});
+
 // Create Source 
 function getSource(doneeCard, amount) {
 	var source = stripe.sources.create({

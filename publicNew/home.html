@@ -60,50 +60,47 @@
 
     </section>
 
-    <section id="campaignBody">
+    <section id="organizationBody">
 
-      <div class="col-md-8 campaignBodyDesc">
-        <img src="img/15k-photo.png" class="campaignPhoto" alt="">
-
-        <h2>Descripción de la Campaña</h2>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-
-      </div>
-
-      <div class="col-md-4 campaignSideBar">
-        <center>
-          <!-- <div class="col-md-12">
-            <button type="button" class="btn btn-donate" data-toggle="modal" data-target="#donateModal">Dona Dinero</button>
-          </div>
-          <div class="col-md-12">
-            <button type="button" class="btn btn-donate" data-toggle="modal" data-target="#giveModal">Dona Cosas</button>
-          </div>
-          <div class="col-md-12">
-            <button type="button" class="btn btn-donate" data-toggle="modal" data-target="#timeModal">Dona Tiempo</button>
-          </div> -->
-
-          <h3>Escoge el tipo de donación</h3>
-          <div class="row">
-            <div class="col-xs-4">
-              <img type="button" data-toggle="modal" data-target="#donateModal" class="btn donateIcons" src="img/money-icon.png" alt="">
-              <h5>Monetario</h5>
+     <div class="container text-center">
+        <!-- <img src="img/15k-photo.png" class="campaignPhoto" alt=""> -->
+      <div id="masonry">
+        <h2><font color=white>Campañas</font></h2>
+        <div class="col-md-3">
+            <div class="blog-column">
+              <img class="img-responsive blog-img" src="img/15k-photo.png" alt="">
+              <div class="column-info">
+                <h4 class="uppercase" style="text-align: center;"></h4>
+              </div>
             </div>
-            <div class="col-xs-4">
-              <img type="button" data-toggle="modal" data-target="#giveModal" class="btn donateIcons" src="img/give-icon.png" alt="">
-              <h5>Artículos</h5>
+          </div>
+          <div class="col-md-3">
+            <div class="blog-column">
+              <img class="img-responsive blog-img" src="img/placeholder.png" alt="">
+              <div class="column-info">
+                <h4 class="uppercase" style="text-align: center;"></h4>
+              </div>
             </div>
-            <div class="col-xs-4">
-              <img type="button" data-toggle="modal" data-target="#timeModal" class="btn donateIcons" src="img/time-icon.png" alt="">
-              <h5>Tiempo</h5>
+          </div>
+          <div class="col-md-3">
+            <div class="blog-column">
+              <img class="img-responsive blog-img" src="img/placeholder.png" alt="">
+              <div class="column-info">
+                <h4 class="uppercase" style="text-align: center;"></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="blog-column">
+              <img class="img-responsive blog-img" src="img/placeholder.png" alt="">
+              <div class="column-info">
+                <h4 class="uppercase" style="text-align: center;"></h4>
+              </div>
             </div>
           </div>
 
-      </center>
-      </div>
-
+          </div>
+        </div>
     </section>
 
     <!-- Donate Modal -->
@@ -265,10 +262,11 @@
   </div>
 </div>
 
-    <section class="col-md-12" id="donationForm">
+    <!-- <section class="col-md-12" id="footer"> -->
 
-    <section id="donationForm">
-      <h1>Donación</h1>
+    <section class="col-md-12" id="footer">
+      <h2><font color=white>Sobre nosotros</font></h2>
+      <p><font color=white>Somos unos estudiantes motivados por comida gratis y mucha cafeína.</font>
       <!-- <form action="../api/charge" method="POST">
         <script
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -280,33 +278,6 @@
           data-locale="auto">
         </script>
       </form> -->
-
-      <form action="form">
-        <div class="col-md-12">
-          <label>Cantidad</label>
-          <input type="text" name="cantidad" ng-model="donation.quantity">
-        </div>
-        <div class="col-md-6">
-          <label>First Name</label>
-          <input type="text" name="firstname" ng-model="donation.firstname">
-        </div>
-        <div class="col-md-6">
-          <label>Last Name</label>
-          <input type="text" name="lastname" ng-model="donation.lastname">
-        </div>
-        <div class="col-md-8">
-          <label>Telephone</label>
-          <input type="text" name="telephone" ng-model="donation.telephone">
-        </div>
-        <div class="col-md-8">
-          <label>Email</label>
-          <input type="text" name="email" ng-model="donation.email">
-        </div>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7">
-        </script>
-        <!-- <input type="submit" value="Submit"> -->
-      </form>
     </section> 
 
 

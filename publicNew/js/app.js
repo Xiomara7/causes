@@ -19,21 +19,20 @@
     // click on `index.html` above to see it used in the DOM!
     syncObject.$bindTo($scope, "donation");
 
-    var amount = $scope.donation.quantity; 
-    console.log('amount' + amount); 
+    // var amount = $scope.donation.quantity; 
+    // console.log('amount' + amount); 
 
     // var req = {
     //   method: 'POST',
     //   url: '../../api/charge',
-    //   data: { : Email, emailContent: Msg,  header: 'Actualización de cita'}
+    //   data: {amount: amount}
     // }
 
-    $http(req).then(function(response){
-        
-        console.log(response);
+    // $http(req).then(function(response){        
+    //   console.log(response);
 
-        
-    }, function(err){
-        console.log(err);
-    });
+    // }, function(err){
+    //   console.log(err);
+    // });
+  
   });

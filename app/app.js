@@ -28,23 +28,27 @@ app.post('/api/donate', function(req, res) {
 	}
 }); 
 
-app.post('api/charge', function(req, res) {
-  var amount = req.body.donation.quantity;
-	var token = request.body.stripeToken;
+app.post('/api/charge', function(req, res) {
+  //var amount = req.body.donation.quantity;
+	console.log('res' + res); 
+  console.log('req' + req.body.stripeToken); 
 
-    stripe.charges.create({
-        source: token,
-        currency: 'usd',
-        amount: amount
-    },
+  var token = req.body.stripeToken;
+	console.log('token' + token);
 
-    function(err, charge) {
-        if (err) {
-            res.send(500, err);
-        } else {
-            res.send(204);
-        }
-    });
+  stripe.charges.create({
+    source: token,
+    currency: 'usd',
+    amount: amount
+  },
+
+  function(err, charge) {
+    if (err) {
+      res.send(500, err);
+    } else {
+      res.send(204);
+    }
+  });
 });
 
 // Create Source 

@@ -106,7 +106,6 @@
 
     </section>
 
-
     <!-- Donate Modal -->
     <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -226,9 +225,11 @@
 </div>
 </div>
 
-    <!-- <section class="col-md-12" id="donationForm">
+    <section class="col-md-12" id="donationForm">
+
+    <section id="donationForm">
       <h1>Donación</h1>
-      <form action="/your-server-side-code" method="POST">
+      <!-- <form action="../api/charge" method="POST">
         <script
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7"
@@ -238,7 +239,8 @@
           data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
           data-locale="auto">
         </script>
-      </form>
+      </form> -->
+
       <form action="form">
         <div class="col-md-12">
           <label>Cantidad</label>
@@ -260,12 +262,12 @@
           <label>Email</label>
           <input type="text" name="email" ng-model="donation.email">
         </div>
-        <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_live_PDbjJ0cTRUadacF6wCGXSWEs">
-        </script> -->
-        <input type="submit" value="Submit">
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7">
+        </script>
+        <!-- <input type="submit" value="Submit"> -->
       </form>
-    </section> -->
+    </section> 
 
 
     <!-- Angular -->

@@ -113,7 +113,11 @@
             <section class="col-md-12" id="donationForm">
               <h3 class="donateModal-headers">Haz una donación para</h3>
               <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
-              <form action="form">
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7">
+              </script>
+              
+              <!-- <form action="form">
                 <div class="col-md-12">
                   <label>Cantidad</label><br>
                   <input type="text" name="cantidad" ng-model="donation.quantity">
@@ -134,12 +138,12 @@
                   <label>Email</label><br>
                   <input type="text" name="email" ng-model="donation.email">
                 </div>
-                <!-- <input type="submit" value="Submit"> -->
-              </form>
+                <input type="submit" value="Submit">
+              </form> -->
             </section>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
       </div>
     </div>
@@ -198,8 +202,8 @@
           <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
           <form action="form">
             <div class="col-md-12 m30">
-              <label>Artículos</label><br>
-              <input class="input100"  type="text" name="date" ng-model="donation.date">
+              <label>Fecha(s) y horario(s) disponibles a donar</label><br>
+              <input class="input100"  type="text" name="date" ng-model="donation.time.date">
 
               <!-- <div class="input-group date">
   <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
@@ -208,19 +212,19 @@
             </div>
             <div class="col-md-6 m30">
               <label>First Name</label><br>
-              <input class="input100"  type="text" name="firstname" ng-model="donation.firstname">
+              <input class="input100"  type="text" name="firstname" ng-model="donation.time.firstname">
             </div>
             <div class="col-md-6 m30">
               <label>Last Name</label><br>
-              <input class="input100"  type="text" name="lastname" ng-model="donation.lastname">
+              <input class="input100"  type="text" name="lastname" ng-model="donation.time.lastname">
             </div>
             <div class="col-md-6 m30">
               <label>Telephone</label><br>
-              <input class="input100"  type="text" name="telephone" ng-model="donation.telephone">
+              <input class="input100"  type="text" name="telephone" ng-model="donation.time.telephone">
             </div>
             <div class="col-md-6 m30">
               <label>Email</label><br>
-              <input class="input100"  type="text" name="email" ng-model="donation.email">
+              <input class="input100"  type="text" name="email" ng-model="donation.time.email">
             </div>
             <!-- <input type="submit" value="Submit"> -->
           </form>
@@ -276,51 +280,6 @@
 </div>
 
     <section class="col-md-12" id="donationForm">
-
-    <section id="donationForm">
-      <h1>Donación</h1>
-      <!-- <form action="../api/charge" method="POST">
-        <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7"
-          data-amount="999"
-          data-name="Demo Site"
-          data-description="Widget"
-          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-          data-locale="auto">
-        </script>
-      </form> -->
-
-      <!-- <form action="form">
-        <div class="col-md-12">
-          <label>Cantidad</label>
-          <input type="text" name="cantidad" ng-model="donation.quantity">
-        </div>
-        <div class="col-md-6">
-          <label>First Name</label>
-          <input type="text" name="firstname" ng-model="donation.firstname">
-        </div>
-        <div class="col-md-6">
-          <label>Last Name</label>
-          <input type="text" name="lastname" ng-model="donation.lastname">
-        </div>
-        <div class="col-md-8">
-          <label>Telephone</label>
-          <input type="text" name="telephone" ng-model="donation.telephone">
-        </div>
-        <div class="col-md-8">
-          <label>Email</label>
-          <input type="text" name="email" ng-model="donation.email">
-        </div>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7">
-        </script>
-        <input type="submit" value="Submit">
-      </form>
-    </section> -->
-
-
-
     <script src="https://checkout.stripe.com/checkout.js"></script>
 
     <script>
@@ -349,12 +308,6 @@
       handler.close();
     });
     </script>
-
-
-
-
-
-
 
 
     <!-- Angular -->

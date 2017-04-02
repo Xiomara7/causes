@@ -12,7 +12,7 @@ app.controller('DonateCtrl', function($scope, $http){
 		function stripeResponseHandler {
 			var req = {
 				method: 'POST',
-				url: '..components/api/donate',
+				url: '../../../app/api/donate',
 				data: { cardID: cardID }
 			}
 
@@ -38,6 +38,5 @@ app.controller('DonateCtrl', function($scope, $http){
 	    		}
 	  		}
 			}, stripeResponseHandler); 
-  	}
-	});
+		});
 });

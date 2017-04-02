@@ -155,9 +155,9 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/header.jpg');
+  /*background-image: url('');*/
   text-align: center;
-  color: white;
+  color: black;
 }
 header .header-content {
   position: relative;

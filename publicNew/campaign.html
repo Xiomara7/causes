@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Donéalo</title>
+    <title>Donealo</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -42,45 +42,37 @@
               <li><a class="text-white" href="index.html#campaignBody">Campañas</a></li>
               <li><a class="text-white" href="index.html#organizationBody">Organizaciones</a></li>
             </ul>
-
+            <form class="navbar-form navbar-right">
+              <button type="submit" data-toggle="modal" class="btn btn-create-campaign" data-target="#createCampaign" class="btn donateIcons" src="" alt="">Crear Campaña</button>
+              <div class="form-group">
+            </form>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
 
-      <div class="organizationProfile">
+      <div class="campaignProgress">
         <center>
-        <h1 class="text-white organizationName">Fundación soy un corazón</h1>
-        <img src="img/soy-corazon.png" class="organizationPhoto" alt="">
+        <h1 class="text-white campaignTitle">Puerto Rico Sunshine 15K</h1>
+        <img class="progressBar" src="img/campaignProgressBar.png" alt="">
       </center>
       </div>
 
 
     </section>
 
-    <section id="profileBody">
+    <section id="campaignBody">
 
+      <div class="col-md-8 campaignBodyDesc">
+        <img src="img/15k-photo.png" class="campaignPhoto" alt="">
 
-     <div class="col-md-8 contactInfo">
+        <h2>Descripción de la Campaña</h2>
 
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 
-        <h2>Descripción de la organización</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 
-          <p>La fundación tiene como misión el recaudo de fondos para ayudar económicamente a los padres de un menor de edad que se encuentra en cuidado intensivo operado de corazón.
-          Es sumamente importante para la recuperación de los menores operados sentir a sus padres con ellos en esos momentos. Los padres que se encuentran pasando por este proceso utilizan el dinero en momentos así de fuertes para las cosas verdaderamente importantes. Un padre con su hijo en cuidado intensivo solo piensa en la salud de su hijo(a), no esta pensando en malgastar dinero, se preocupa por tener para el parking, la gasolina, comida para sus otros hijos, los deducibles y en adición debe segur pagando las facturas regulares del hogar. Queremos ayudar a aliviar la carga económica en un momento tan duro, ser la mano amiga, instrumento de Dios para que sientan el amor del prójimo que se preocupó por hacer algo. Ayuda económica es lo que se necesita en un momento así y mucha oración.</p>
+      </div>
 
-        <h2>Información contacto</h2>
-        <h3>Dirección física</h3>
-        <p>Cooperativa de Vivienda El Alcnzar Apt 15k, 65 de Infanteria, San Juan, PR 00923</p>
-
-        <h3>Categoría</h3>
-        <p>Salud, Familiar</p>
-
-        <h3>Eventos</h3>
-        <h4>Puerto Rico Sunshine 15k</h4>
-        <img src="img/15k-photo.png" class="campaignPhotoProfile" alt="">
-
-
-    </div>
       <div class="col-md-4 campaignSideBar">
         <center>
           <!-- <div class="col-md-12">
@@ -96,7 +88,8 @@
           <h3>Escoge el tipo de donación</h3>
           <div class="row">
             <div class="col-xs-4">
-              <img id="donateMoney" type="button" class="btn donateIcons" src="img/money-icon.png" alt="">
+              <!-- <img id="donateMoney" type="button" class="btn donateIcons" src="img/money-icon.png" alt=""> -->
+              <img type="button" data-toggle="modal" data-target="#donateModal" class="btn donateIcons" src="img/money-icon.png" alt="">
               <h5>Monetario</h5>
             </div>
             <div class="col-xs-4">
@@ -109,11 +102,6 @@
             </div>
           </div>
 
-          <div class="shareRow">
-            <h3>Compártelo en las redes sociales</h3>
-            <img src="img/share-icons.png" class="shareIcons" alt="">
-          </div>
-
       </center>
       </div>
 
@@ -123,12 +111,34 @@
     <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
+            <section class="col-md-12" id="giveForm">
+          <h3 class="donateModal-headers">Haz una donación para</h3>
+          <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
+           <form action="form">
+              <div class="col-md-20">
+                <label>Nombre de la campaña</label><br>
+                <input class="form-control"
+                  type="number"
+                  id="custom-donation-amount"
+                  placeholder="50.00"
+                  min="0"
+                  step="10.00"/>
+              </div>
+            </form>
+        </section>
+        <div class="modal-footer">
+        <center>
+        <button type="button" id="donateMoney" style="margin-top:40px;" class="btn btn-create-campaign" data-dismiss="modal">Submit</button>
+        </center>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
             <section class="col-md-12" id="donationForm">
-              <h3 class="donateModal-headers">Haz una donación para</h3>
+              <!-- <h3 class="donateModal-headers">Haz una donación para</h3>
               <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
               <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7">
-              </script>
+              </script> -->
 
               <!-- <form action="form">
                 <div class="col-md-12">
@@ -253,27 +263,107 @@
 </div>
 
 
+<!-- Create campaign -->
+  <div class="modal fade" id="createCampaign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <section class="col-md-12" id="giveForm">
+            <h3 class="donateModal-headers">Crea una campaña</h3>
+            <!-- <h2 class="donateModal-headers"></h2> -->
+            <form action="form">
+              <div class="col-md-20">
+                <label>Nombre de la campaña</label><br>
+                <input type="" name="campaign" ng-model="">
+              </div>
+              <div class="col-md-20">
+                <label>Meta de la campaña</label><br>
+                <input type="text" name="goal" ng-model="">
+              </div>
+<!--               <div class="col-md-6">
+                <label>Last Name</label><br>
+                <input type="text" name="lastname" ng-model="donation.lastname">
+              </div> -->
+              <div class="col-md-20">
+                <label>Fecha del evento</label><br>
+                <input type="text" name="date" ng-model="">
+              </div>
+              <div class="col-md-20">
+                <label>Fecha que culmina la campaña</label><br>
+                <input type="text" name= ng-model="">
+              </div>
+              <!-- <input type="submit" value="Submit"> -->
+            </form>
+          </section>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+  </div>
+</div>
 
     <section class="col-md-12" id="donationForm">
-    <script src="https://checkout.stripe.com/checkout.js"></script>
+      <!-- Money Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <section class="col-md-12" id="giveForm">
+          <h3 class="donateModal-headers">Haz una donación para</h3>
+          <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
+           <form action="form">
+              <div class="col-md-20">
+                <label>Nombre de la campaña</label><br>
+                <input class="form-control"
+                  type="number"
+                  id="custom-donation-amount"
+                  placeholder="50.00"
+                  min="0"
+                  step="10.00"/>
+              </div>
+            </form>
+        </section>
+        <div class="modal-footer">
+        <center>
+        <button type="button" style="margin-top:40px;" class="btn btn-create-campaign">Submit</button>
+      </center>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+    </div>
+    </div>
+    </section>
 
+    <script src="https://checkout.stripe.com/checkout.js"></script>
     <script>
     var handler = StripeCheckout.configure({
       key: 'pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7',
       locale: 'auto',
       token: function(token) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
+        var token = token.id;
+
+      // var req = {
+      //   method: 'POST',
+      //   url: '../../api/charge',
+      //   data: {token: token}
+      // }
+
+      // $http(req).then(function(response){
+      //   console.log(response);
+
+      // }, function(err){
+      //   console.log(err);
+      // });
       }
     });
 
     document.getElementById('donateMoney').addEventListener('click', function(e) {
       // Open Checkout with further options:
+      var amount = $("#custom-donation-amount").val() * 100;
       handler.open({
         name: 'Donación',
         description: 'Puerto Rico Sunshine 15K',
         zipCode: true,
-        amount: 2000
+        amount: amount
       });
       e.preventDefault();
     });

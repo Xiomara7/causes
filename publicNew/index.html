@@ -88,7 +88,7 @@
           <h3>Escoge el tipo de donación</h3>
           <div class="row">
             <div class="col-xs-4">
-              <img type="button" data-toggle="modal" data-target="#donateModal" class="btn donateIcons" src="img/money-icon.png" alt="">
+              <img id="donateMoney" type="button" class="btn donateIcons" src="img/money-icon.png" alt="">
               <h5>Monetario</h5>
             </div>
             <div class="col-xs-4">
@@ -156,24 +156,24 @@
             <form action="form">
               <div class="col-md-12 m30">
                 <label>Artículos</label><br>
-                <textarea class="input100" autofocus=""name="articles" rows="5" ng-model="donation.articles"></textarea>
+                <textarea class="input100" autofocus=""name="articles" rows="5" ng-model="donation.give.articles"></textarea>
                 <!-- <input type="text" name="cantidad" ng-model="donation.quantity"> -->
               </div>
               <div class="col-md-6 m30">
                 <label>First Name</label><br>
-                <input class="input100"  type="text" name="firstname" ng-model="donation.firstname">
+                <input class="input100"  type="text" name="firstname" ng-model="donation.give.firstname">
               </div>
               <div class="col-md-6 m30">
                 <label>Last Name</label><br>
-                <input class="input100"  type="text" name="lastname" ng-model="donation.lastname">
+                <input class="input100"  type="text" name="lastname" ng-model="donation.give.lastname">
               </div>
               <div class="col-md-6 m30">
                 <label>Telephone</label><br>
-                <input class="input100"  type="text" name="telephone" ng-model="donation.telephone">
+                <input class="input100"  type="text" name="telephone" ng-model="donation.give.telephone">
               </div>
               <div class="col-md-6 m30">
                 <label>Email</label><br>
-                <input class="input100"  type="text" name="email" ng-model="donation.email">
+                <input class="input100"  type="text" name="email" ng-model="donation.give.email">
               </div>
               <!-- <input type="submit" value="Submit"> -->
             </form>
@@ -291,7 +291,7 @@
         </script>
       </form> -->
 
-      <form action="form">
+      <!-- <form action="form">
         <div class="col-md-12">
           <label>Cantidad</label>
           <input type="text" name="cantidad" ng-model="donation.quantity">
@@ -315,9 +315,46 @@
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7">
         </script>
-        <!-- <input type="submit" value="Submit"> -->
+        <input type="submit" value="Submit">
       </form>
-    </section> 
+    </section> -->
+
+
+
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <script>
+    var handler = StripeCheckout.configure({
+      key: 'pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7',
+      locale: 'auto',
+      token: function(token) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+      }
+    });
+
+    document.getElementById('donateMoney').addEventListener('click', function(e) {
+      // Open Checkout with further options:
+      handler.open({
+        name: 'Donación',
+        description: 'Puerto Rico Sunshine 15K',
+        zipCode: true,
+        amount: 2000
+      });
+      e.preventDefault();
+    });
+
+    // Close Checkout on page navigation:
+    window.addEventListener('popstate', function() {
+      handler.close();
+    });
+    </script>
+
+
+
+
+
+
 
 
     <!-- Angular -->

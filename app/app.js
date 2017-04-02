@@ -33,7 +33,6 @@ app.post('/api/donate', function(req, res) {
 
 app.post('/api/charge', function(req, res) {
   //var amount = req.body.donation.quantity;
-	console.log('res' + res); 
   console.log('req' + req.body.stripeToken); 
 
   var token = req.body.stripeToken;
@@ -54,47 +53,8 @@ app.post('/api/charge', function(req, res) {
   });
 });
 
-// Create Source
-function getSource(doneeCard, amount) {
-	var source = stripe.sources.create({
-  	amount: amount,
-  	currency: "usd",
-  	type: "three_d_secure",
-  	three_d_secure: {card: doneeCard},
-  	redirect: {return_url: ""},
-
-	}, function(err, source) {
-  	if(err != null) {
-  		// Check if source is ready to use
-  		// If not, try regular card type
-  		chargeCard(source, amount);
-
-  	} else {
-  		//
-  	}
-	});
-
-	return source;
-}
-
-function chargeCard(source, amount) {
-	stripe.charges.create({
-		amount: amount,
-		currency: "usd",
-		source: source,
-		description: "Donation"
-
-	}, function(err, charge) {
-		if(err != null) {
-			response.send('error' + err)
-		} else {
-			response.send('charge' + charge)
-		}
-	});
-}
-
 // Email
-app.get('/email', function(req, res) {
+app.post('/email', function(req, res) {
 	var email = req.body.email;
 	var password = req.body.password;
 	var from = req.body.doneeEmail;
@@ -128,4 +88,5 @@ app.get('/email', function(req, res) {
 	});
 });
 
-app.listen(3000);
+var port = process.env.PORT || 3000; 
+app.listen(port);

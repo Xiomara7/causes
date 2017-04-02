@@ -88,7 +88,8 @@
           <h3>Escoge el tipo de donación</h3>
           <div class="row">
             <div class="col-xs-4">
-              <img id="donateMoney" type="button" class="btn donateIcons" src="img/money-icon.png" alt="">
+              <!-- <img id="donateMoney" type="button" class="btn donateIcons" src="img/money-icon.png" alt=""> -->
+              <img type="button" data-toggle="modal" data-target="#donateModal" class="btn donateIcons" src="img/money-icon.png" alt="">
               <h5>Monetario</h5>
             </div>
             <div class="col-xs-4">
@@ -110,12 +111,28 @@
     <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <section class="col-md-12" id="donationForm">
-              <h3 class="donateModal-headers">Haz una donación para</h3>
-              <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7">
-              </script>
+            <section class="col-md-12" id="giveForm">
+          <h3 class="donateModal-headers">Haz una donación para</h3>
+          <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
+           <form action="form">
+              <div class="col-md-20">
+                <label>Nombre de la campaña</label><br>
+                <input class="form-control"
+                  type="number"
+                  id="custom-donation-amount"
+                  placeholder="50.00"
+                  min="0"
+                  step="10.00"/>
+              </div>
+            </form>
+        </section>
+        <div class="modal-footer">
+        <center>
+        <button type="button" id="donateMoney" style="margin-top:40px;" class="btn btn-create-campaign" data-dismiss="modal">Submit</button>
+        </center>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
               
               <!-- <form action="form">
                 <div class="col-md-12">
@@ -280,8 +297,37 @@
 </div>
 
     <section class="col-md-12" id="donationForm">
-    <script src="https://checkout.stripe.com/checkout.js"></script>
+      <!-- Money Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <section class="col-md-12" id="giveForm">
+          <h3 class="donateModal-headers">Haz una donación para</h3>
+          <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
+           <form action="form">
+              <div class="col-md-20">
+                <label>Nombre de la campaña</label><br>
+                <input class="form-control"
+                  type="number"
+                  id="custom-donation-amount"
+                  placeholder="50.00"
+                  min="0"
+                  step="10.00"/>
+              </div>
+            </form>
+        </section>
+        <div class="modal-footer">
+        <center>
+        <button type="button" style="margin-top:40px;" class="btn btn-create-campaign">Submit</button>
+      </center>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+    </div>
+    </div>
+    </section>
 
+    <script src="https://checkout.stripe.com/checkout.js"></script>
     <script>
     var handler = StripeCheckout.configure({
       key: 'pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7',
@@ -294,11 +340,12 @@
 
     document.getElementById('donateMoney').addEventListener('click', function(e) {
       // Open Checkout with further options:
+      var amount = $("#custom-donation-amount").val() * 100;
       handler.open({
         name: 'Donación',
         description: 'Puerto Rico Sunshine 15K',
         zipCode: true,
-        amount: 2000
+        amount: amount
       });
       e.preventDefault();
     });

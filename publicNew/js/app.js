@@ -17,22 +17,5 @@
     var syncObject = $firebaseObject(ref);
     // synchronize the object with a three-way data binding
     // click on `index.html` above to see it used in the DOM!
-    syncObject.$bindTo($scope, "donation");
-
-    // var amount = $scope.donation.quantity; 
-    // console.log('amount' + amount); 
-
-    // var req = {
-    //   method: 'POST',
-    //   url: '../../api/charge',
-    //   data: {amount: amount}
-    // }
-
-    // $http(req).then(function(response){        
-    //   console.log(response);
-
-    // }, function(err){
-    //   console.log(err);
-    // });
-  
+    syncObject.$bindTo($scope, "donation");  
   });

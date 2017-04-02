@@ -333,8 +333,20 @@
       key: 'pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7',
       locale: 'auto',
       token: function(token) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
+        var token = token.id; 
+
+      // var req = {
+      //   method: 'POST',
+      //   url: '../../api/charge',
+      //   data: {token: token}
+      // }
+
+      // $http(req).then(function(response){        
+      //   console.log(response);
+
+      // }, function(err){
+      //   console.log(err);
+      // });
       }
     });
 

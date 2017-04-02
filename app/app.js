@@ -1,11 +1,11 @@
-var express = require('express'); 
-var firebase = require('firebase'); 
+var express = require('express');
+var firebase = require('firebase');
 var admin = require("firebase-admin");
 var parser = require('body-parser')
 var stripe = require('stripe')('sk_test_4FkZmWx3xMJrOablJBUcqqlG');
 var serviceAccount = require("../Resources/serviceAccount.json");
 var nodemailer = require('nodemailer');
-var app = express(); 
+var app = express();
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -15,20 +15,23 @@ admin.initializeApp({
 app.use(parser.json());
 app.use(parser.urlencoded({
 	extended: true
-})); 
+}));
 
-app.post('/api/', function(req, res) {	
-	res.send('HOME'); 
-}); 
+
+app.use(express.static('publicNew'));
+
+app.post('/api/', function(req, res) {
+	res.send('HOME');
+});
 
 // Stripe
 app.post('/api/donate', function(req, res) {
 	if(req.body.cardID && req.body.amount){
-		getSource(cardID, amount); 
+		getSource(cardID, amount);
 	}
-}); 
+});
 
-// Create Source 
+// Create Source
 function getSource(doneeCard, amount) {
 	var source = stripe.sources.create({
   	amount: amount,
@@ -36,19 +39,19 @@ function getSource(doneeCard, amount) {
   	type: "three_d_secure",
   	three_d_secure: {card: doneeCard},
   	redirect: {return_url: ""},
-	
+
 	}, function(err, source) {
   	if(err != null) {
   		// Check if source is ready to use
   		// If not, try regular card type
-  		chargeCard(source, amount); 
+  		chargeCard(source, amount);
 
   	} else {
   		//
   	}
 	});
 
-	return source; 
+	return source;
 }
 
 function chargeCard(source, amount) {
@@ -69,11 +72,11 @@ function chargeCard(source, amount) {
 
 // Email
 app.get('/email', function(req, res) {
-	var email = req.body.email; 
-	var password = req.body.password; 
-	var from = req.body.doneeEmail; 
-	var to = req.body.orgEmail; 
-	var subject = req.body.subject; 
+	var email = req.body.email;
+	var password = req.body.password;
+	var from = req.body.doneeEmail;
+	var to = req.body.orgEmail;
+	var subject = req.body.subject;
 
 	// create reusable transporter object using the default SMTP transport
 	let transporter = nodemailer.createTransport({
@@ -86,8 +89,8 @@ app.get('/email', function(req, res) {
 
 	// setup email data with unicode symbols
 	let mailOptions = {
-    from: from, 
-    to: to, 
+    from: from,
+    to: to,
     subject: subject,
     text: 'Hello world ?', // plain text body
     html: '<b>Hello world ?</b>' // html body
@@ -100,6 +103,6 @@ app.get('/email', function(req, res) {
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
 	});
-}); 
+});
 
-app.listen(3000); 
+app.listen(3000);

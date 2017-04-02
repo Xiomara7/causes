@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Xiomara7/causes#readme",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-stripe": "^4.2.12",
     "angularfire": "^2.3.0",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",

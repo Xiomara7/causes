@@ -1,0 +1,43 @@
+#splashScreen {
+  background: #00ADD7;
+  width: 100%;
+  /*max-height: 700px;*/
+  height: 400px;
+}
+
+.logo {
+  width:100px;
+  height: auto;
+}
+
+.text-white {
+  color: #fff;
+  margin-top:5px;
+}
+
+.campaignProgress {
+  margin-top: 100px;
+}
+
+.btn-create-campaign {
+    /* Rectangle 2: */
+  background: #8FD93E;
+  border-radius: 100px;
+  color:#fff;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.progressBar {
+  width: 500px
+}
+
+.campaignTitle {
+  font-size: 48px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+.campaignPhoto {
+  width:75%;
+}

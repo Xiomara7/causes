@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html ng-app="donealoApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Donéalo</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/profile.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-controller="MainCtrl">
+
+    <section id="splashScreen">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img class="logo" src="img/logo.png" alt="">
+            </a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a class="text-white" href="#">Inicio</a></li>
+              <li><a class="text-white" href="#">Campaña</a></li>
+              <li><a class="text-white" href="#">Organizaciones</a></li>
+            </ul>
+  
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <div class="organizationProfile">
+        <center>
+        <h1 class="text-white organizationName">Fundación soy un corazón</h1>
+        <img src="img/soy-corazon.png" class="organizationPhoto" alt="">
+      </center>
+      </div>
+
+
+    </section>
+
+    <section id="profileBody">
+
+  
+     <div class="col-md-8 contactInfo">
+
+
+        <h2>Descripción de la organización</h2>
+
+          <p>La fundación tiene como misión el recaudo de fondos para ayudar económicamente a los padres de un menor de edad que se encuentra en cuidado intensivo operado de corazón.
+          Es sumamente importante para la recuperación de los menores operados sentir a sus padres con ellos en esos momentos. Los padres que se encuentran pasando por este proceso utilizan el dinero en momentos así de fuertes para las cosas verdaderamente importantes. Un padre con su hijo en cuidado intensivo solo piensa en la salud de su hijo(a), no esta pensando en malgastar dinero, se preocupa por tener para el parking, la gasolina, comida para sus otros hijos, los deducibles y en adición debe segur pagando las facturas regulares del hogar. Queremos ayudar a aliviar la carga económica en un momento tan duro, ser la mano amiga, instrumento de Dios para que sientan el amor del prójimo que se preocupó por hacer algo. Ayuda económica es lo que se necesita en un momento así y mucha oración.</p>
+
+        <h2>Información contacto</h2>
+        <h3>Dirección física</h3>
+        <p>Cooperativa de Vivienda El Alcnzar Apt 15k, 65 de Infanteria, San Juan, PR 00923</p>
+
+        <h3>Categoría</h3>
+        <p>Salud, Familiar</p>
+
+        <h3>Eventos</h3>
+        <h4>Puerto Rico Sunshine 15k</h4>
+        <img src="img/15k-photo.png" class="campaignPhotoProfile" alt="">
+
+
+    </div>
+      <div class="col-md-4 campaignSideBar">
+        <center>
+          <!-- <div class="col-md-12">
+            <button type="button" class="btn btn-donate" data-toggle="modal" data-target="#donateModal">Dona Dinero</button>
+          </div>
+          <div class="col-md-12">
+            <button type="button" class="btn btn-donate" data-toggle="modal" data-target="#giveModal">Dona Cosas</button>
+          </div>
+          <div class="col-md-12">
+            <button type="button" class="btn btn-donate" data-toggle="modal" data-target="#timeModal">Dona Tiempo</button>
+          </div> -->
+
+          <h3>Escoge el tipo de donación</h3>
+          <div class="row">
+            <div class="col-xs-4">
+              <img id="donateMoney" type="button" class="btn donateIcons" src="img/money-icon.png" alt="">
+              <h5>Monetario</h5>
+            </div>
+            <div class="col-xs-4">
+              <img type="button" data-toggle="modal" data-target="#giveModal" class="btn donateIcons" src="img/give-icon.png" alt="">
+              <h5>Artículos</h5>
+            </div>
+            <div class="col-xs-4">
+              <img type="button" data-toggle="modal" data-target="#timeModal" class="btn donateIcons" src="img/time-icon.png" alt="">
+              <h5>Tiempo</h5>
+            </div>
+          </div>
+
+          <div class="shareRow">
+            <h3>Compártelo en las redes sociales</h3>
+            <img src="img/share-icons.png" class="shareIcons" alt="">
+          </div>
+
+      </center>
+      </div>
+
+    </section>
+
+    <!-- Donate Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <section class="col-md-12" id="donationForm">
+              <h3 class="donateModal-headers">Haz una donación para</h3>
+              <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7">
+              </script>
+              
+              <!-- <form action="form">
+                <div class="col-md-12">
+                  <label>Cantidad</label><br>
+                  <input type="text" name="cantidad" ng-model="donation.quantity">
+                </div>
+                <div class="col-md-6">
+                  <label>First Name</label><br>
+                  <input type="text" name="firstname" ng-model="donation.firstname">
+                </div>
+                <div class="col-md-6">
+                  <label>Last Name</label><br>
+                  <input type="text" name="lastname" ng-model="donation.lastname">
+                </div>
+                <div class="col-md-8">
+                  <label>Telephone</label><br>
+                  <input type="text" name="telephone" ng-model="donation.telephone">
+                </div>
+                <div class="col-md-8">
+                  <label>Email</label><br>
+                  <input type="text" name="email" ng-model="donation.email">
+                </div>
+                <input type="submit" value="Submit">
+              </form> -->
+            </section>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Give Modal -->
+  <div class="modal fade" id="giveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <section class="col-md-12" id="giveForm">
+            <h3 class="donateModal-headers">Haz una donación para</h3>
+            <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
+            <form action="form">
+              <div class="col-md-12 m30">
+                <label>Artículos</label><br>
+                <textarea class="input100" autofocus=""name="articles" rows="5" ng-model="donation.give.articles"></textarea>
+                <!-- <input type="text" name="cantidad" ng-model="donation.quantity"> -->
+              </div>
+              <div class="col-md-6 m30">
+                <label>First Name</label><br>
+                <input class="input100"  type="text" name="firstname" ng-model="donation.give.firstname">
+              </div>
+              <div class="col-md-6 m30">
+                <label>Last Name</label><br>
+                <input class="input100"  type="text" name="lastname" ng-model="donation.give.lastname">
+              </div>
+              <div class="col-md-6 m30">
+                <label>Telephone</label><br>
+                <input class="input100"  type="text" name="telephone" ng-model="donation.give.telephone">
+              </div>
+              <div class="col-md-6 m30">
+                <label>Email</label><br>
+                <input class="input100"  type="text" name="email" ng-model="donation.give.email">
+              </div>
+              <!-- <input type="submit" value="Submit"> -->
+            </form>
+          </section>
+        <div class="modal-footer">
+          <center>
+          <button type="button" style="margin-top:40px;" class="btn btn-create-campaign" data-dismiss="modal">Submit</button>
+        </center>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Time Modal -->
+<div class="modal fade" id="timeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <section class="col-md-12" id="giveForm">
+          <h3 class="donateModal-headers">Haz una donación para</h3>
+          <h2 class="donateModal-headers">Puerto Rico Sunshine 15K</h2>
+          <form action="form">
+            <div class="col-md-12 m30">
+              <label>Fecha(s) y horario(s) disponibles a donar</label><br>
+              <input class="input100"  type="text" name="date" ng-model="donation.time.date">
+
+              <!-- <div class="input-group date">
+  <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+</div> -->
+              <!-- <input type="text" name="cantidad" ng-model="donation.quantity"> -->
+            </div>
+            <div class="col-md-6 m30">
+              <label>First Name</label><br>
+              <input class="input100"  type="text" name="firstname" ng-model="donation.time.firstname">
+            </div>
+            <div class="col-md-6 m30">
+              <label>Last Name</label><br>
+              <input class="input100"  type="text" name="lastname" ng-model="donation.time.lastname">
+            </div>
+            <div class="col-md-6 m30">
+              <label>Telephone</label><br>
+              <input class="input100"  type="text" name="telephone" ng-model="donation.time.telephone">
+            </div>
+            <div class="col-md-6 m30">
+              <label>Email</label><br>
+              <input class="input100"  type="text" name="email" ng-model="donation.time.email">
+            </div>
+            <!-- <input type="submit" value="Submit"> -->
+          </form>
+        </section>
+      <div class="modal-footer">
+        <center>
+        <button type="button" style="margin-top:40px;" class="btn btn-create-campaign" data-dismiss="modal">Submit</button>
+      </center>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+    <section class="col-md-12" id="donationForm">
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <script>
+    var handler = StripeCheckout.configure({
+      key: 'pk_test_Q2JuGCU5n3qMIbrPpFEp1yK7',
+      locale: 'auto',
+      token: function(token) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+      }
+    });
+
+    document.getElementById('donateMoney').addEventListener('click', function(e) {
+      // Open Checkout with further options:
+      handler.open({
+        name: 'Donación',
+        description: 'Puerto Rico Sunshine 15K',
+        zipCode: true,
+        amount: 2000
+      });
+      e.preventDefault();
+    });
+
+    // Close Checkout on page navigation:
+    window.addEventListener('popstate', function() {
+      handler.close();
+    });
+    </script>
+
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

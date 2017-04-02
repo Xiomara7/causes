@@ -17,17 +17,15 @@ app.use(parser.urlencoded({
 	extended: true
 })); 
 
-app.get('/', function(req, res) {	
+app.post('/api/', function(req, res) {	
 	res.send('HOME'); 
 }); 
 
 // Stripe
-app.get('/donate', function(req, res) {
-	var cardID = req.body.cardID;
-	var amount = req.body.amount; 
-	var source = getSource(cardID, amount); 
-
-	response.send('DONATE'); 
+app.post('/api/donate', function(req, res) {
+	if(req.body.cardID && req.body.amount){
+		getSource(cardID, amount); 
+	}
 }); 
 
 // Create Source 
@@ -55,7 +53,7 @@ function getSource(doneeCard, amount) {
 
 function chargeCard(source, amount) {
 	stripe.charges.create({
-		amount: 2000,
+		amount: amount,
 		currency: "usd",
 		source: source,
 		description: "Donation"
